@@ -5,7 +5,6 @@ const productSlice = createSlice({
     initialState: {
         productsList : [],
         isLoading: false,
-        isChoose: null,
     },
     reducers: {
         getProductsFetch: (state) => {

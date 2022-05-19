@@ -1,11 +1,22 @@
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "components/Header/style.scss";
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Nav, NavItem } from "reactstrap";
+import { getCart } from "Redux/cartSlice";
 
 function Header(props) {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.cart);
+
+  useEffect(() => {
+    dispatch(getCart());
+  }, [dispatch]);
+
+  // console.log("cart:", cart);
+
   return (
     <header className="header">
       <div className="header_container">
@@ -75,7 +86,10 @@ function Header(props) {
             fixedWidth
             className="header_checkout__icon"
           />
-          <div className="header_checkout__count">1</div>
+
+          {cart.length > 0 && (
+            <div className="header_checkout__count">{cart.length}</div>
+          )}
         </NavLink>
       </div>
     </header>
