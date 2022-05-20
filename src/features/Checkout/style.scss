@@ -1,0 +1,134 @@
+@import "App.scss";
+
+.checkout {
+    &__container {
+        width: 100%;
+        padding: 0 10rem;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 1rem;
+        margin: 2rem 0;
+
+        font-weight: 700;
+        text-transform: capitalize;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    }
+
+    &__content {
+        display: flex;
+        gap: 1rem;
+
+        height: calc(100% - 5rem);
+
+        &__list {
+            width: 60%;
+
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            
+            width: 40%;
+
+
+            &__price {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                padding: 1rem;
+                background-color: rgba(255, 255, 255, .8);
+                border-radius: 8px;
+                box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+                
+                &__title {
+                    font-size: 1.125rem;
+                    font-weight: 600;
+                }
+
+                &__fee {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+
+                    &__t {
+                        font-size: 1.25rem;
+                        font-weight: 350;
+                    }
+
+                    &__n {
+                        font-size: 1.25rem;
+                        font-weight: 400;
+                    }
+
+                    &__sub {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+
+                &__total {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                }
+            }
+
+            &__done {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: capitalize;
+
+                padding: .5rem 1rem;
+                font-size: 1.125rem;
+                
+                background-color: $blue-btn;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+
+                cursor: pointer;
+                opacity: 1;
+
+                &:hover {
+                    opacity: .5;
+                }
+            }
+
+            &__back {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: capitalize;
+
+                padding: .5rem 1rem;
+                font-size: 1.125rem;
+                
+                background-color: transparent;
+                color: $blue-btn;
+                border: solid 1px $blue-btn;
+                border-radius: 8px;
+                box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+
+                cursor: pointer;
+                opacity: 1;
+
+                &:hover {
+                    opacity: .5;
+                }
+            }
+        }  
+    }
+}

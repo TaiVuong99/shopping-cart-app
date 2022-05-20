@@ -1,29 +1,21 @@
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "components/Header/style.scss";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Nav, NavItem } from "reactstrap";
-import { getCart } from "Redux/cartSlice";
 
-function Header(props) {
-  const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart.cart);
-
-  useEffect(() => {
-    dispatch(getCart());
-  }, [dispatch]);
-
-  // console.log("cart:", cart);
+function Header() {
+  const cart = useSelector((state) => state.cart);
 
   return (
     <header className="header">
       <div className="header_container">
-        <Nav className="header_nav">
-          <NavItem className="header_nav__item">
+        <ul className="header_nav">
+          <li className="header_nav__item">
             <NavLink
-              to="/"
+              to="/home"
               style={({ isActive }) =>
                 isActive
                   ? {
@@ -36,9 +28,9 @@ function Header(props) {
             >
               Home
             </NavLink>
-          </NavItem>
+          </li>
 
-          <NavItem className="header_nav__item">
+          <li className="header_nav__item">
             <NavLink
               to="/products"
               style={({ isActive }) =>
@@ -53,9 +45,9 @@ function Header(props) {
             >
               Products
             </NavLink>
-          </NavItem>
+          </li>
 
-          <NavItem className="header_nav__item">
+          <li className="header_nav__item">
             <NavLink
               to="/reviews"
               style={({ isActive }) =>
@@ -70,8 +62,8 @@ function Header(props) {
             >
               Reviews
             </NavLink>
-          </NavItem>
-        </Nav>
+          </li>
+        </ul>
       </div>
 
       <div className="header_container">

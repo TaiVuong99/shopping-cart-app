@@ -12,7 +12,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<None />}></Route>
+        <Route path="/home" element={<None />}></Route>
         <Route path="/products" element={<Products />}></Route>
         <Route path="/reviews" element={<None />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>

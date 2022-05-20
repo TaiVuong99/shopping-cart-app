@@ -1,30 +1,25 @@
 const { createSlice } = require("@reduxjs/toolkit");
 
-
+const initialState = []
 const cartSlice = createSlice({
     name: 'cart',
-    initialState: {
-        cart: [],
-        cartActiveId: null,
-        isLoading: false,
-    },
+    initialState,
     reducers: {
-        getCart: () => {},
-
-        getCartSuccess: (state, action) => {
-            state.cart = action.payload
+        addCart: (state, action) => {
+            let indexExist = state.findIndex(product => product.productId === action.payload.productId)
+            
+            if(indexExist < 0) {
+                state.push(action.payload)
+            } else {
+                state[indexExist] = {
+                    ...state[indexExist],
+                    quantity: state[indexExist].quantity + action.payload.quantity
+                }
+            }
         },
 
-        postCart: () => {},
-
-        postCartSucess: (state, action) => {
-            state.cart = action.payload
-            console.log("state: ", state.cart)
-            // console.log("action: ", action)
-            
-        }
     }
 })
 
-export const {getCart, getCartSuccess, postCart, postCartSucess} = cartSlice.actions
+export const {addCart} = cartSlice.actions
 export default cartSlice.reducer

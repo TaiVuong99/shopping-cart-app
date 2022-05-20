@@ -34,14 +34,15 @@ function ProductDetail(props) {
     onAddCartClick,
   } = props;
 
+  // console.log(Object.keys(productActive).length === 0)
   const handleAddCartClick = () => {
     const formInfo = {
-        ...productActive,
-        quantity
-    }
+      ...productActive,
+      quantity,
+    };
 
-    if(onAddCartClick) onAddCartClick(formInfo)
-  }
+    if (onAddCartClick) onAddCartClick(formInfo);
+  };
 
   return (
     <>
@@ -83,6 +84,10 @@ function ProductDetail(props) {
               size="lg"
               fixedWidth
               className="detail__content__bot__left__button"
+              style={{
+                pointerEvents: quantity === 99 ? "none" : "",
+                opacity: quantity === 99 ? ".2" : "",
+              }}
               onClick={() => onIncreaseClick()}
             />
           </div>
