@@ -23,6 +23,11 @@ function* workGetProductsFetch() {
 }
 
 function* workPostCart(action) {
+  const today = new Date()
+  const date = today.getFullYear()+'/'+`0${(today.getMonth()+1)}`.slice(-2)+'/'+`0${today.getDate()}`.slice(-2);
+  const time = `0${today.getHours()}`.slice(-2) + ":" + `0${today.getMinutes()}`.slice(-2) + ":" + `0${today.getSeconds()}`.slice(-2);
+  const dateTime = date + ' ' + time
+
   toast.success("Posting your order...", {
     icon: <LoaderIcon />,
     style: {
@@ -39,6 +44,7 @@ function* workPostCart(action) {
     total: +action.payload.total.toFixed(2),
     pay: false,
     productsOrder: action.payload.cart,
+    dateTime
   };
 
   yield call(() => axios.post(`${process.env.REACT_APP_CART_URL}`, formPost));
