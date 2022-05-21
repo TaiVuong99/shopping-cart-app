@@ -34,7 +34,6 @@ function ProductDetail(props) {
     onAddCartClick,
   } = props;
 
-  // console.log(Object.keys(productActive).length === 0)
   const handleAddCartClick = () => {
     const formInfo = {
       ...productActive,

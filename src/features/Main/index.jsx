@@ -25,7 +25,6 @@ function Products() {
   const handleProductClick = (product) => {
     setProductActive(product);
     setQuantity(1);
-    // console.log(productActive);
   };
 
   const handleDecreaseClick = () => {
@@ -37,10 +36,6 @@ function Products() {
   };
 
   const handleAddCartClick = (formInfo) => {
-    // const formAdd = {
-    //   pay: false,
-    //   productsInCart: [{...formInfo}],
-    // }
     toast.success('Added successfully!!', {
       position: "bottom-left"
     })

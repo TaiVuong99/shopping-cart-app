@@ -1,9 +1,11 @@
-# Start fake api
-
-`cd src`
-`cd api`
-`npx json-server -p 3001 api.json`
-
 ## Start app
-
 `npm start`
+
+## Source Project
+https://github.com/TaiVuong99/shopping-cart-app.git
+
+## Link Project
+
+
+## Link Fake api order
+https://fake-order-api.herokuapp.com/order

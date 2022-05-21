@@ -3,7 +3,9 @@
 .checkout {
     &__container {
         width: 100%;
-        padding: 0 10rem;
+        height: calc(100% - 5rem);
+
+        padding: 2rem 10rem;
     }
 
     &__title {
@@ -12,7 +14,6 @@
         align-items: center;
 
         padding: 1rem;
-        margin: 2rem 0;
 
         font-weight: 700;
         text-transform: capitalize;
@@ -26,10 +27,10 @@
         gap: 1rem;
 
         height: calc(100% - 5rem);
+        padding-top: 1rem;
 
         &__list {
             width: 60%;
-
         }
 
         &__info {

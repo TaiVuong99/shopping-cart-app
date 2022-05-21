@@ -14,7 +14,6 @@ ProductList.defaultProps = {
 
 function ProductList(props) {
   const { productsList, onProductClick } = props;
-  //   console.log(productsList);
 
   const handleClick = (product) => {
     if (onProductClick) onProductClick(product);
