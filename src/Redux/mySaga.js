@@ -39,14 +39,14 @@ function* workPostCart(action) {
 
   const formPost = {
     orderId: uuid(),
+    dateTime,
+    pay: false,
+    productsOrder: action.payload.cart,
     subTotal: +action.payload.sub.toFixed(2),
     shippingFee: action.payload.ship,
     total: +action.payload.total.toFixed(2),
-    pay: false,
-    productsOrder: action.payload.cart,
-    dateTime
   };
-
+  
   yield call(() => axios.post(`${process.env.REACT_APP_CART_URL}`, formPost));
 
   yield delay(1000);
